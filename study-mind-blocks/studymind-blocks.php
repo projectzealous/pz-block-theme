@@ -11,8 +11,8 @@
 defined( 'ABSPATH' ) || exit;
 
 define( 'SM_BLOCKS_VERSION', '0.1.0' );
-define( 'SM_BLOCKS_DIR', plugin_dir_path( __FILE__ ) );
-define( 'SM_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
+define( 'SM_BLOCKS_DIR', trailingslashit( get_theme_file_path() ) );
+define( 'SM_BLOCKS_URL', trailingslashit( get_theme_file_uri() ) );
 
 require_once SM_BLOCKS_DIR . 'inc/helpers.php';
 require_once SM_BLOCKS_DIR . 'inc/chrome.php';
