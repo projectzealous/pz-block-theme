@@ -38,4 +38,4 @@ jobs:
             --exclude='.git/' \
             --exclude='.github/' \
             -e "ssh -p $SSH_PORT" \
-            ./ "$SSH_USER@$SSH_HOST:/var/www/html/wp-content/themes/my-theme/"
+            ./ "$SSH_USER@$SSH_HOST:/public_html/study-mind.webdevnow.uk/wp-content/themes/study-mind-blocks"
