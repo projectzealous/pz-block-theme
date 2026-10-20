@@ -1,0 +1,144 @@
+{
+    "key": "group_sm_awards_enquiry",
+    "title": "Block: Awards and Enquiry",
+    "fields": [
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Awards",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_awards_enquiry_tab_awards",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "eyebrow",
+            "label": "Eyebrow",
+            "placeholder": "Awards",
+            "key": "field_sm_awards_enquiry_eyebrow",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading_lead",
+            "label": "Heading (first line)",
+            "placeholder": "Recognised for",
+            "key": "field_sm_awards_enquiry_heading_lead",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading_highlight",
+            "label": "Heading (purple line)",
+            "placeholder": "excellence in EdTech",
+            "key": "field_sm_awards_enquiry_heading_highlight",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "textarea",
+            "name": "lede",
+            "label": "Intro",
+            "placeholder": "",
+            "rows": 3,
+            "new_lines": "",
+            "key": "field_sm_awards_enquiry_lede",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "awards",
+            "label": "Awards",
+            "sub_fields": [
+                {
+                    "type": "image",
+                    "name": "image",
+                    "label": "Badge image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "key": "field_sm_awards_enquiry_awards_image",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "label",
+                    "label": "Label",
+                    "placeholder": "",
+                    "key": "field_sm_awards_enquiry_awards_label",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "table",
+            "button_label": "Add award",
+            "min": 0,
+            "max": 0,
+            "key": "field_sm_awards_enquiry_awards",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Form",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_awards_enquiry_tab_form",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "form_heading",
+            "label": "Form heading",
+            "placeholder": "Book a commitment-free call to see how we can help today",
+            "key": "field_sm_awards_enquiry_form_heading",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "form_shortcode",
+            "label": "Form shortcode",
+            "placeholder": "",
+            "instructions": "e.g. [gravityform id=\"1\" title=\"false\"]. Replaces the design form fields. Without it the design form shows but does not submit.",
+            "key": "field_sm_awards_enquiry_form_shortcode",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "form_button",
+            "label": "Button label (design form only)",
+            "placeholder": "Book a free consultation",
+            "key": "field_sm_awards_enquiry_form_button",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "sm/awards-enquiry"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}

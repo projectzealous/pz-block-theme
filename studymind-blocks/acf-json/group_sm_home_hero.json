@@ -1,0 +1,365 @@
+{
+    "key": "group_sm_home_hero",
+    "title": "Block: Homepage Hero",
+    "fields": [
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Content",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_home_hero_tab_content",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "file",
+            "name": "background_video",
+            "label": "Background video",
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "mp4,webm",
+            "instructions": "Looping, muted MP4. Hidden for visitors who prefer reduced motion.",
+            "key": "field_sm_home_hero_background_video",
+            "required": 0
+        },
+        {
+            "type": "image",
+            "name": "video_poster",
+            "label": "Video poster image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Shown before the video loads and if there is no video.",
+            "key": "field_sm_home_hero_video_poster",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading",
+            "label": "Heading",
+            "placeholder": "Personalised education support for every student",
+            "instructions": "Leave empty to use the design's copy.",
+            "key": "field_sm_home_hero_heading",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "tagline_before",
+            "label": "Tagline: before highlight",
+            "placeholder": "Your",
+            "key": "field_sm_home_hero_tagline_before",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "tagline_highlight",
+            "label": "Tagline: gold highlight",
+            "placeholder": "complete education toolkit",
+            "key": "field_sm_home_hero_tagline_highlight",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "tagline_after",
+            "label": "Tagline: after highlight",
+            "placeholder": ", from ages 11 to 18",
+            "key": "field_sm_home_hero_tagline_after",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "services",
+            "label": "Service pills",
+            "sub_fields": [
+                {
+                    "type": "link",
+                    "name": "link",
+                    "label": "Service link",
+                    "return_format": "array",
+                    "key": "field_sm_home_hero_services_link",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "table",
+            "button_label": "Add service",
+            "min": 0,
+            "max": 0,
+            "key": "field_sm_home_hero_services",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Finder",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_home_hero_tab_finder",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "tab_search_label",
+            "label": "Search tab label",
+            "placeholder": "Search our services",
+            "key": "field_sm_home_hero_tab_search_label",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "tab_quiz_label",
+            "label": "Quiz tab label",
+            "placeholder": "Find your perfect product",
+            "key": "field_sm_home_hero_tab_quiz_label",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "search_placeholder",
+            "label": "Search placeholder",
+            "placeholder": "Search a subject, exam or goal. Try \"UCAT\" or \"11+\"",
+            "key": "field_sm_home_hero_search_placeholder",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "link",
+            "name": "finder_link",
+            "label": "Link under the finder",
+            "return_format": "array",
+            "instructions": "Default: Or view all services → #products",
+            "key": "field_sm_home_hero_finder_link",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "finder_products",
+            "label": "Products (search and quiz results)",
+            "sub_fields": [
+                {
+                    "type": "text",
+                    "name": "title",
+                    "label": "Title",
+                    "placeholder": "",
+                    "key": "field_sm_home_hero_finder_products_title",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "description",
+                    "label": "One-line description",
+                    "placeholder": "",
+                    "key": "field_sm_home_hero_finder_products_description",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "kind",
+                    "label": "Label",
+                    "placeholder": "",
+                    "instructions": "Small tag on the right, e.g. Tutoring, Course, Free.",
+                    "key": "field_sm_home_hero_finder_products_kind",
+                    "required": 0
+                },
+                {
+                    "type": "link",
+                    "name": "link",
+                    "label": "Link",
+                    "return_format": "array",
+                    "key": "field_sm_home_hero_finder_products_link",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "keywords",
+                    "label": "Search keywords",
+                    "placeholder": "",
+                    "instructions": "Extra words people might type, separated by spaces.",
+                    "key": "field_sm_home_hero_finder_products_keywords",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "tags",
+                    "label": "Quiz tags",
+                    "placeholder": "",
+                    "instructions": "Comma-separated answer tags this product suits, e.g. student,gcse,grades.",
+                    "key": "field_sm_home_hero_finder_products_tags",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add product",
+            "min": 0,
+            "max": 0,
+            "instructions": "Used for search suggestions and quiz results. Empty uses starter content.",
+            "key": "field_sm_home_hero_finder_products",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "quiz_questions",
+            "label": "Quiz questions",
+            "sub_fields": [
+                {
+                    "type": "text",
+                    "name": "question",
+                    "label": "Question",
+                    "placeholder": "",
+                    "key": "field_sm_home_hero_quiz_questions_question",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "repeater",
+                    "name": "options",
+                    "label": "Answers",
+                    "sub_fields": [
+                        {
+                            "type": "text",
+                            "name": "label",
+                            "label": "Answer",
+                            "placeholder": "",
+                            "key": "field_sm_home_hero_quiz_questions_options_label",
+                            "instructions": "",
+                            "required": 0
+                        },
+                        {
+                            "type": "text",
+                            "name": "tag",
+                            "label": "Tag",
+                            "placeholder": "",
+                            "key": "field_sm_home_hero_quiz_questions_options_tag",
+                            "instructions": "",
+                            "required": 0
+                        }
+                    ],
+                    "layout": "table",
+                    "button_label": "Add answer",
+                    "min": 0,
+                    "max": 4,
+                    "key": "field_sm_home_hero_quiz_questions_options",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add question",
+            "min": 0,
+            "max": 0,
+            "key": "field_sm_home_hero_quiz_questions",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "result_tagline",
+            "label": "Result label",
+            "placeholder": "Our pick for you",
+            "key": "field_sm_home_hero_result_tagline",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "result_button",
+            "label": "Result button",
+            "placeholder": "Find out more",
+            "key": "field_sm_home_hero_result_button",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "restart_label",
+            "label": "Restart label",
+            "placeholder": "Start again",
+            "key": "field_sm_home_hero_restart_label",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Trust row",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_home_hero_tab_trust_row",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "image",
+            "name": "gov_badge_image",
+            "label": "Government badge logo",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "White logo. Empty uses the design badge.",
+            "key": "field_sm_home_hero_gov_badge_image",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "gov_badge_text",
+            "label": "Government badge text",
+            "placeholder": "Official UK Government Partner",
+            "key": "field_sm_home_hero_gov_badge_text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "gallery",
+            "name": "proof_avatars",
+            "label": "Student avatars",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min": 0,
+            "max": 5,
+            "insert": "append",
+            "key": "field_sm_home_hero_proof_avatars",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "proof_text",
+            "label": "Proof text",
+            "placeholder": "Trusted by 12,000+ students",
+            "key": "field_sm_home_hero_proof_text",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "sm/home-hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}

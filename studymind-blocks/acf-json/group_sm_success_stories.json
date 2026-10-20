@@ -1,0 +1,127 @@
+{
+    "key": "group_sm_success_stories",
+    "title": "Block: Success Stories",
+    "fields": [
+        {
+            "type": "text",
+            "name": "eyebrow",
+            "label": "Eyebrow",
+            "placeholder": "Success stories",
+            "key": "field_sm_success_stories_eyebrow",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading",
+            "label": "Heading",
+            "placeholder": "Testimonials and success stories",
+            "key": "field_sm_success_stories_heading",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "textarea",
+            "name": "lede",
+            "label": "Intro",
+            "placeholder": "",
+            "rows": 3,
+            "new_lines": "",
+            "key": "field_sm_success_stories_lede",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "cards",
+            "label": "Story cards",
+            "sub_fields": [
+                {
+                    "type": "image",
+                    "name": "image",
+                    "label": "Image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "key": "field_sm_success_stories_cards_image",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "true_false",
+                    "name": "tall",
+                    "label": "Tall image",
+                    "ui": 1,
+                    "default_value": 0,
+                    "key": "field_sm_success_stories_cards_tall",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "true_false",
+                    "name": "light",
+                    "label": "Light placeholder",
+                    "ui": 1,
+                    "default_value": 0,
+                    "instructions": "Only affects the empty placeholder.",
+                    "key": "field_sm_success_stories_cards_light",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "title",
+                    "label": "Title",
+                    "placeholder": "",
+                    "key": "field_sm_success_stories_cards_title",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "textarea",
+                    "name": "text",
+                    "label": "Text",
+                    "placeholder": "",
+                    "rows": 3,
+                    "new_lines": "",
+                    "key": "field_sm_success_stories_cards_text",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "url",
+                    "name": "video",
+                    "label": "Video link (optional)",
+                    "key": "field_sm_success_stories_cards_video",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add story",
+            "min": 0,
+            "max": 0,
+            "key": "field_sm_success_stories_cards",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "sm/success-stories"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}

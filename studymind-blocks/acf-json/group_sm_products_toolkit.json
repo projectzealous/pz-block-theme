@@ -1,0 +1,264 @@
+{
+    "key": "group_sm_products_toolkit",
+    "title": "Block: Products Toolkit",
+    "fields": [
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Heading",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_products_toolkit_tab_heading",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "eyebrow",
+            "label": "Eyebrow",
+            "placeholder": "Our products",
+            "key": "field_sm_products_toolkit_eyebrow",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading_lead",
+            "label": "Heading (dark part)",
+            "placeholder": "Your ultimate",
+            "key": "field_sm_products_toolkit_heading_lead",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading_highlight",
+            "label": "Heading (purple part)",
+            "placeholder": "learning toolkit",
+            "key": "field_sm_products_toolkit_heading_highlight",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "textarea",
+            "name": "lede",
+            "label": "Intro",
+            "placeholder": "Unlock your full potential with our innovative EdTech solutions...",
+            "rows": 3,
+            "new_lines": "",
+            "key": "field_sm_products_toolkit_lede",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "link",
+            "name": "button",
+            "label": "Heading button",
+            "return_format": "array",
+            "instructions": "Default: View all products",
+            "key": "field_sm_products_toolkit_button",
+            "required": 0
+        },
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Products",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_products_toolkit_tab_products",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "products",
+            "label": "Products",
+            "sub_fields": [
+                {
+                    "type": "text",
+                    "name": "title",
+                    "label": "Title",
+                    "placeholder": "",
+                    "key": "field_sm_products_toolkit_products_title",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "textarea",
+                    "name": "summary",
+                    "label": "Summary (left list)",
+                    "placeholder": "",
+                    "rows": 3,
+                    "new_lines": "",
+                    "key": "field_sm_products_toolkit_products_summary",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "more_label",
+                    "label": "\"Learn more\" label",
+                    "placeholder": "Learn more ↗",
+                    "key": "field_sm_products_toolkit_products_more_label",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "repeater",
+                    "name": "chips",
+                    "label": "Chips",
+                    "sub_fields": [
+                        {
+                            "type": "text",
+                            "name": "text",
+                            "label": "Chip",
+                            "placeholder": "",
+                            "key": "field_sm_products_toolkit_products_chips_text",
+                            "instructions": "",
+                            "required": 0
+                        },
+                        {
+                            "type": "true_false",
+                            "name": "wide",
+                            "label": "Full width",
+                            "ui": 1,
+                            "default_value": 0,
+                            "key": "field_sm_products_toolkit_products_chips_wide",
+                            "instructions": "",
+                            "required": 0
+                        }
+                    ],
+                    "layout": "table",
+                    "button_label": "Add chip",
+                    "min": 0,
+                    "max": 0,
+                    "key": "field_sm_products_toolkit_products_chips",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "repeater",
+                    "name": "badges",
+                    "label": "Badges (optional)",
+                    "sub_fields": [
+                        {
+                            "type": "image",
+                            "name": "image",
+                            "label": "Badge image",
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "key": "field_sm_products_toolkit_products_badges_image",
+                            "instructions": "",
+                            "required": 0
+                        },
+                        {
+                            "type": "text",
+                            "name": "label",
+                            "label": "Badge label",
+                            "placeholder": "",
+                            "key": "field_sm_products_toolkit_products_badges_label",
+                            "instructions": "",
+                            "required": 0
+                        }
+                    ],
+                    "layout": "table",
+                    "button_label": "Add badge",
+                    "min": 0,
+                    "max": 2,
+                    "key": "field_sm_products_toolkit_products_badges",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "link",
+                    "name": "cta",
+                    "label": "Panel button",
+                    "return_format": "array",
+                    "key": "field_sm_products_toolkit_products_cta",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "image",
+                    "name": "image",
+                    "label": "Panel image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "key": "field_sm_products_toolkit_products_image",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add product",
+            "min": 0,
+            "max": 0,
+            "instructions": "Each product is a tab. Empty uses the design's five products.",
+            "key": "field_sm_products_toolkit_products",
+            "required": 0
+        },
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Stats",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_products_toolkit_tab_stats",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "stats",
+            "label": "Stats (shown on every product)",
+            "sub_fields": [
+                {
+                    "type": "text",
+                    "name": "value",
+                    "label": "Value",
+                    "placeholder": "",
+                    "key": "field_sm_products_toolkit_stats_value",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "label",
+                    "label": "Label",
+                    "placeholder": "",
+                    "key": "field_sm_products_toolkit_stats_label",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "table",
+            "button_label": "Add stat",
+            "min": 0,
+            "max": 4,
+            "key": "field_sm_products_toolkit_stats",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "sm/products-toolkit"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}

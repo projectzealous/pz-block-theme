@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sm/why-study-mind",
+	"title": "Why Study Mind",
+	"description": "Stats row, CTA and testimonial carousel (design T06).",
+	"category": "study-mind",
+	"icon": "chart-bar",
+	"keywords": [
+		"stats",
+		"carousel",
+		"testimonials"
+	],
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"customClassName": true
+	},
+	"style": [
+		"sm-home",
+		"sm-wp"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"viewScript": [
+		"file:./view.js"
+	]
+}

@@ -1,0 +1,48 @@
+{
+    "key": "group_sm_trust_logos",
+    "title": "Block: Trust Logos",
+    "fields": [
+        {
+            "type": "text",
+            "name": "heading",
+            "label": "Heading",
+            "placeholder": "Trusted by schools, councils and universities",
+            "key": "field_sm_trust_logos_heading",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "gallery",
+            "name": "logos",
+            "label": "Logos",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min": 0,
+            "max": 0,
+            "insert": "append",
+            "instructions": "Transparent PNG or SVG logos.",
+            "key": "field_sm_trust_logos_logos",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "sm/trust-logos"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}

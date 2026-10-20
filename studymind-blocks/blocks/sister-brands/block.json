@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sm/sister-brands",
+	"title": "Sister Brands",
+	"description": "Three brand cards with stats and ticks (design R08).",
+	"category": "study-mind",
+	"icon": "networking",
+	"keywords": [
+		"brands"
+	],
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"customClassName": true
+	},
+	"style": [
+		"sm-home",
+		"sm-wp"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	}
+}

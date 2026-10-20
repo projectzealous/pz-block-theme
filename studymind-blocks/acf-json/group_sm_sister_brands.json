@@ -1,0 +1,181 @@
+{
+    "key": "group_sm_sister_brands",
+    "title": "Block: Sister Brands",
+    "fields": [
+        {
+            "type": "text",
+            "name": "heading_lead",
+            "label": "Heading (white part)",
+            "placeholder": "We do even",
+            "key": "field_sm_sister_brands_heading_lead",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading_highlight",
+            "label": "Heading (gold part)",
+            "placeholder": "more",
+            "key": "field_sm_sister_brands_heading_highlight",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "textarea",
+            "name": "lede",
+            "label": "Intro",
+            "placeholder": "Three specialist sister brands, built for students aiming at medicine, Oxbridge and law.",
+            "rows": 3,
+            "new_lines": "",
+            "key": "field_sm_sister_brands_lede",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "brands",
+            "label": "Brands",
+            "sub_fields": [
+                {
+                    "type": "select",
+                    "name": "theme",
+                    "label": "Colour theme",
+                    "choices": {
+                        "medic": "Medic Mind (purple / teal)",
+                        "oxbridge": "Oxbridge Mind (navy / blue)",
+                        "law": "Law Mind (charcoal)"
+                    },
+                    "default_value": "medic",
+                    "return_format": "value",
+                    "ui": 0,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "key": "field_sm_sister_brands_brands_theme",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "name",
+                    "label": "Brand name",
+                    "placeholder": "",
+                    "key": "field_sm_sister_brands_brands_name",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "image",
+                    "name": "logo",
+                    "label": "Logo mark (optional)",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "instructions": "Small white mark. Empty uses the design mark for the theme.",
+                    "key": "field_sm_sister_brands_brands_logo",
+                    "required": 0
+                },
+                {
+                    "type": "repeater",
+                    "name": "stats",
+                    "label": "Stats",
+                    "sub_fields": [
+                        {
+                            "type": "text",
+                            "name": "value",
+                            "label": "Value",
+                            "placeholder": "",
+                            "key": "field_sm_sister_brands_brands_stats_value",
+                            "instructions": "",
+                            "required": 0
+                        },
+                        {
+                            "type": "text",
+                            "name": "label",
+                            "label": "Label",
+                            "placeholder": "",
+                            "key": "field_sm_sister_brands_brands_stats_label",
+                            "instructions": "",
+                            "required": 0
+                        }
+                    ],
+                    "layout": "table",
+                    "button_label": "Add stat",
+                    "min": 0,
+                    "max": 3,
+                    "key": "field_sm_sister_brands_brands_stats",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "textarea",
+                    "name": "text",
+                    "label": "Description",
+                    "placeholder": "",
+                    "rows": 3,
+                    "new_lines": "",
+                    "key": "field_sm_sister_brands_brands_text",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "repeater",
+                    "name": "list",
+                    "label": "Ticked list",
+                    "sub_fields": [
+                        {
+                            "type": "text",
+                            "name": "item",
+                            "label": "Item",
+                            "placeholder": "",
+                            "key": "field_sm_sister_brands_brands_list_item",
+                            "instructions": "",
+                            "required": 0
+                        }
+                    ],
+                    "layout": "table",
+                    "button_label": "Add item",
+                    "min": 0,
+                    "max": 0,
+                    "key": "field_sm_sister_brands_brands_list",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "link",
+                    "name": "button",
+                    "label": "Button",
+                    "return_format": "array",
+                    "key": "field_sm_sister_brands_brands_button",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add brand",
+            "min": 0,
+            "max": 3,
+            "key": "field_sm_sister_brands_brands",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "sm/sister-brands"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}

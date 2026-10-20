@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sm/success-stories",
+	"title": "Success Stories",
+	"description": "Masonry of photo and video story cards (design T07).",
+	"category": "study-mind",
+	"icon": "format-gallery",
+	"keywords": [
+		"stories",
+		"testimonials"
+	],
+	"supports": {
+		"anchor": true,
+		"align": false,
+		"html": false,
+		"customClassName": true
+	},
+	"style": [
+		"sm-home",
+		"sm-wp"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	}
+}

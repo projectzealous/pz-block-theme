@@ -1,0 +1,38 @@
+/*
+ * WordPress integration layer.
+ * Everything here is additive: it covers what the design got from its
+ * surroundings in the Block Library, plus real images replacing the
+ * placeholders. The design CSS itself (sm-home.css, sm-shared.css) is untouched.
+ */
+
+/* Scope wrappers create no box of their own, so WordPress block-gap margins on
+   them do nothing and the sticky header still sticks to the page. */
+.sm-home,
+.sm-shared { display: contents; }
+
+/* In the Block Library, homepage blocks inherited these text settings from the
+   page around them. Matching them keeps line heights identical. */
+.sm-home { font-size: 14.5px; line-height: 1.55; }
+
+/* Real images inside the design's placeholder boxes (.ph). Without an image the
+   placeholder renders exactly as designed. */
+.sm-home .ph.has-img { background: transparent !important; border-color: transparent !important; }
+.sm-home .ph.has-img::after { content: none !important; display: none !important; }
+.sm-home .ph.has-img > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  max-width: none; object-fit: cover;
+}
+.sm-home .logos .ph.has-img > img,
+.sm-home .award .ph.has-img > img,
+.sm-home .tbadge .ph.has-img > img { object-fit: contain; }
+.sm-home .mcard .ph.has-img > img { object-position: top; }
+
+/* Optional video link laid over a card's media. */
+.sm-home .sm-media-link { position: absolute; inset: 0; z-index: 4; }
+
+/* Sticky header clears the WordPress admin bar for logged-in users. */
+.admin-bar .sm-shared .nav { top: 32px; }
+@media (max-width: 782px) { .admin-bar .sm-shared .nav { top: 46px; } }
+
+/* Mobile menu open: lock page scroll (replaces .pg.navlock from the design). */
+html.sm-navlock, html.sm-navlock body { overflow: hidden; }

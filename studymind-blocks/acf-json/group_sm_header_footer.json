@@ -1,0 +1,226 @@
+{
+    "key": "group_sm_header_footer",
+    "title": "Header & Footer",
+    "fields": [
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Header",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_header_footer_tab_header",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "image",
+            "name": "header_logo",
+            "label": "Header logo",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "White logo on the dark bar. Empty uses the design logo.",
+            "key": "field_sm_header_footer_header_logo",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "header_menu",
+            "label": "Main menu",
+            "sub_fields": [
+                {
+                    "type": "link",
+                    "name": "link",
+                    "label": "Menu item",
+                    "return_format": "array",
+                    "key": "field_sm_header_footer_header_menu_link",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "repeater",
+                    "name": "children",
+                    "label": "Dropdown links",
+                    "sub_fields": [
+                        {
+                            "type": "link",
+                            "name": "link",
+                            "label": "Dropdown link",
+                            "return_format": "array",
+                            "key": "field_sm_header_footer_header_menu_children_link",
+                            "instructions": "",
+                            "required": 0
+                        },
+                        {
+                            "type": "select",
+                            "name": "icon",
+                            "label": "Icon",
+                            "choices": {
+                                "tutor": "1:1 tutoring (person)",
+                                "course": "Online course (screen)",
+                                "notes": "Revision notes (document)",
+                                "paper": "Past paper (page)",
+                                "resource": "Resources (book)",
+                                "guide": "Study guide (book)",
+                                "camp": "Camp (tent)",
+                                "ap": "Alternative provision (shield)",
+                                "bespoke": "Bespoke (star outline)",
+                                "group": "Group (people)",
+                                "event": "Event (calendar)",
+                                "who": "About (info)",
+                                "team": "Team (two people)",
+                                "star": "Success (star)"
+                            },
+                            "default_value": "tutor",
+                            "return_format": "value",
+                            "ui": 0,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "key": "field_sm_header_footer_header_menu_children_icon",
+                            "instructions": "",
+                            "required": 0
+                        }
+                    ],
+                    "layout": "table",
+                    "button_label": "Add dropdown link",
+                    "min": 0,
+                    "max": 0,
+                    "key": "field_sm_header_footer_header_menu_children",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add menu item",
+            "min": 0,
+            "max": 0,
+            "instructions": "Top-level items with optional dropdowns. Empty shows the design menu.",
+            "key": "field_sm_header_footer_header_menu",
+            "required": 0
+        },
+        {
+            "type": "link",
+            "name": "header_cta",
+            "label": "Header button",
+            "return_format": "array",
+            "instructions": "Gold button on the right. Default: Contact Us → #enquire.",
+            "key": "field_sm_header_footer_header_cta",
+            "required": 0
+        },
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Footer",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_header_footer_tab_footer",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "image",
+            "name": "footer_logo",
+            "label": "Footer logo",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "key": "field_sm_header_footer_footer_logo",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "textarea",
+            "name": "footer_blurb",
+            "label": "Footer text",
+            "placeholder": "Award-winning tuition, online courses and free resources for students aged 11 to 18.",
+            "rows": 3,
+            "new_lines": "",
+            "key": "field_sm_header_footer_footer_blurb",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "footer_columns",
+            "label": "Footer columns",
+            "sub_fields": [
+                {
+                    "type": "text",
+                    "name": "heading",
+                    "label": "Column heading",
+                    "placeholder": "",
+                    "key": "field_sm_header_footer_footer_columns_heading",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "repeater",
+                    "name": "links",
+                    "label": "Links",
+                    "sub_fields": [
+                        {
+                            "type": "link",
+                            "name": "link",
+                            "label": "Link",
+                            "return_format": "array",
+                            "key": "field_sm_header_footer_footer_columns_links_link",
+                            "instructions": "",
+                            "required": 0
+                        }
+                    ],
+                    "layout": "table",
+                    "button_label": "Add link",
+                    "min": 0,
+                    "max": 0,
+                    "key": "field_sm_header_footer_footer_columns_links",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add column",
+            "min": 0,
+            "max": 4,
+            "instructions": "Four link columns. Empty shows the design columns.",
+            "key": "field_sm_header_footer_footer_columns",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "footer_legal",
+            "label": "Copyright line",
+            "placeholder": "© {year} Study Mind Limited. Registered in England and Wales, company no. 10871191.",
+            "instructions": "{year} becomes the current year.",
+            "key": "field_sm_header_footer_footer_legal",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "footer_also",
+            "label": "Right-hand line",
+            "placeholder": "Also from us: Medic Mind · Oxbridge Mind · Law Mind",
+            "key": "field_sm_header_footer_footer_also",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "sm-header-footer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}

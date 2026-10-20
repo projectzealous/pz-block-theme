@@ -1,0 +1,232 @@
+{
+    "key": "group_sm_why_study_mind",
+    "title": "Block: Why Study Mind",
+    "fields": [
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Heading and stats",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_why_study_mind_tab_heading_and_stats",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "eyebrow",
+            "label": "Eyebrow",
+            "placeholder": "Why choose us",
+            "key": "field_sm_why_study_mind_eyebrow",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading_lead",
+            "label": "Heading (dark part)",
+            "placeholder": "Why",
+            "key": "field_sm_why_study_mind_heading_lead",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "text",
+            "name": "heading_highlight",
+            "label": "Heading (purple part)",
+            "placeholder": "Study Mind?",
+            "key": "field_sm_why_study_mind_heading_highlight",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "textarea",
+            "name": "lede",
+            "label": "Intro",
+            "placeholder": "",
+            "rows": 3,
+            "new_lines": "",
+            "key": "field_sm_why_study_mind_lede",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "stats",
+            "label": "Stats",
+            "sub_fields": [
+                {
+                    "type": "number",
+                    "name": "number",
+                    "label": "Number",
+                    "instructions": "Counts up to this. e.g. 98.9",
+                    "key": "field_sm_why_study_mind_stats_number",
+                    "required": 0
+                },
+                {
+                    "type": "number",
+                    "name": "decimals",
+                    "label": "Decimals",
+                    "default_value": 0,
+                    "min": 0,
+                    "max": 2,
+                    "key": "field_sm_why_study_mind_stats_decimals",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "suffix",
+                    "label": "Suffix",
+                    "placeholder": "%",
+                    "key": "field_sm_why_study_mind_stats_suffix",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "label",
+                    "label": "Label",
+                    "placeholder": "",
+                    "key": "field_sm_why_study_mind_stats_label",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "table",
+            "button_label": "Add stat",
+            "min": 0,
+            "max": 5,
+            "key": "field_sm_why_study_mind_stats",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "link",
+            "name": "button",
+            "label": "Button",
+            "return_format": "array",
+            "instructions": "Default: Book a free consultation → #enquire",
+            "key": "field_sm_why_study_mind_button",
+            "required": 0
+        },
+        {
+            "type": "tab",
+            "name": "",
+            "label": "Carousel",
+            "placement": "top",
+            "endpoint": 0,
+            "key": "field_sm_why_study_mind_tab_carousel",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "type": "repeater",
+            "name": "cards",
+            "label": "Testimonial cards",
+            "sub_fields": [
+                {
+                    "type": "select",
+                    "name": "style",
+                    "label": "Card style",
+                    "choices": {
+                        "body": "Title and text",
+                        "quote": "Quote (dark)"
+                    },
+                    "default_value": "body",
+                    "return_format": "value",
+                    "ui": 0,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "key": "field_sm_why_study_mind_cards_style",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "image",
+                    "name": "image",
+                    "label": "Image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "key": "field_sm_why_study_mind_cards_image",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "true_false",
+                    "name": "light",
+                    "label": "Light placeholder",
+                    "ui": 1,
+                    "default_value": 0,
+                    "instructions": "Only affects the empty placeholder.",
+                    "key": "field_sm_why_study_mind_cards_light",
+                    "required": 0
+                },
+                {
+                    "type": "url",
+                    "name": "video",
+                    "label": "Video link",
+                    "instructions": "Adds the play icon and opens the video.",
+                    "key": "field_sm_why_study_mind_cards_video",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "title",
+                    "label": "Title / quote",
+                    "placeholder": "",
+                    "key": "field_sm_why_study_mind_cards_title",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "textarea",
+                    "name": "text",
+                    "label": "Text (title and text style)",
+                    "placeholder": "",
+                    "rows": 3,
+                    "new_lines": "",
+                    "key": "field_sm_why_study_mind_cards_text",
+                    "instructions": "",
+                    "required": 0
+                },
+                {
+                    "type": "text",
+                    "name": "attribution",
+                    "label": "Attribution (quote style)",
+                    "placeholder": "Student",
+                    "key": "field_sm_why_study_mind_cards_attribution",
+                    "instructions": "",
+                    "required": 0
+                }
+            ],
+            "layout": "block",
+            "button_label": "Add card",
+            "min": 0,
+            "max": 0,
+            "key": "field_sm_why_study_mind_cards",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "sm/why-study-mind"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1792364305
+}
