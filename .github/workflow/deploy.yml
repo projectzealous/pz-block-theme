@@ -24,8 +24,8 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
       - name: Deploy theme
@@ -37,5 +37,5 @@ jobs:
           rsync -avz \
             --exclude='.git/' \
             --exclude='.github/' \
-            -e "ssh -p $SSH_PORT" \
+            -e "ssh -i ~/.ssh/id_rsa -p $SSH_PORT" \
             ./ "$SSH_USER@$SSH_HOST:/public_html/study-mind.webdevnow.uk/wp-content/themes/study-mind-blocks"
