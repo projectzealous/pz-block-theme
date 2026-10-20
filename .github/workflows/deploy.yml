@@ -36,6 +36,5 @@ jobs:
           rsync -avz \
             --exclude='.git/' \
             --exclude='.github/' \
-            -e "ssh -i $HOME/.ssh/id_rsa -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes" \
-            ./ \
+            -e "ssh -i ~/.ssh/id_rsa -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes"
             "$SSH_USER@$SSH_HOST:/home/nhu0skyqo2lr/public_html/study-mind.webdevnow.uk/wp-content/themes/study-mind-blocks/"
