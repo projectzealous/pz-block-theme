@@ -1,10 +1,9 @@
-
 name: Deploy WordPress Theme
 
 on:
   push:
     branches:
-      - development
+      - studymind
 
   workflow_dispatch:
 
@@ -16,59 +15,44 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup SSH
+      - name: Check FTP settings
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
-          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+          STUDYMIND_FTP_HOST: ${{ secrets.STUDYMIND_FTP_HOST }}
+          STUDYMIND_FTP_USERNAME: ${{ secrets.STUDYMIND_FTP_USERNAME }}
+          STUDYMIND_FTP_PASSWORD: ${{ secrets.STUDYMIND_FTP_PASSWORD }}
+          STUDYMIND_FTP_DIR: ${{ vars.STUDYMIND_FTP_DIR || secrets.STUDYMIND_FTP_DIR }}
         run: |
-          set -e
-
-          mkdir -p "$HOME/.ssh"
-          chmod 700 "$HOME/.ssh"
-
-          # Save deployment private key
-          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/github_studymind_deploy"
-          chmod 600 "$HOME/.ssh/github_studymind_deploy"
-
-          # Validate private key
-          ssh-keygen -y -P "" \
-            -f "$HOME/.ssh/github_studymind_deploy" > /dev/null
-
-          echo "SSH private key validated successfully"
-
-          # Install pre-verified server host key
-          test -n "$SSH_KNOWN_HOSTS"
-          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
-          chmod 600 "$HOME/.ssh/known_hosts"
-
-      - name: Test SSH connection
-        env:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
-        run: |
-          ssh \
-            -i "$HOME/.ssh/github_studymind_deploy" \
-            -p "$SSH_PORT" \
-            -o BatchMode=yes \
-            -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=yes \
-            "$SSH_USER@$SSH_HOST" \
-            "echo 'SSH connection successful'"
+          missing=0
+          for v in STUDYMIND_FTP_HOST STUDYMIND_FTP_USERNAME STUDYMIND_FTP_PASSWORD; do
+            if [ -n "${!v}" ]; then
+              echo "  $v: set"
+            else
+              echo "::error title=Check FTP settings::Secret $v is missing or empty"
+              missing=1
+            fi
+          done
+          if [ -n "$STUDYMIND_FTP_DIR" ]; then
+            echo "  STUDYMIND_FTP_DIR: $STUDYMIND_FTP_DIR"
+          else
+            echo "::error title=Check FTP settings::Variable STUDYMIND_FTP_DIR is missing or empty"
+            missing=1
+          fi
+          exit $missing
 
       - name: Deploy theme
-        env:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
-        run: |
-          rsync -avz \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            -e "ssh -i $HOME/.ssh/github_studymind_deploy -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
-            ./ \
-            "$SSH_USER@$SSH_HOST:/home/nhu0skyqo2lr/public_html/study-mind.webdevnow.uk/wp-content/themes/study-mind-blocks/"
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.STUDYMIND_FTP_HOST }}
+          username: ${{ secrets.STUDYMIND_FTP_USERNAME }}
+          password: ${{ secrets.STUDYMIND_FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ${{ vars.STUDYMIND_FTP_DIR || secrets.STUDYMIND_FTP_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            **/node_modules/**
+            tests/**
 
-          echo "WordPress theme deployment completed!"
+      - name: Done
+        run: echo "WordPress theme deployment completed!"
