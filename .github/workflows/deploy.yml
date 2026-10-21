@@ -55,4 +55,4 @@ jobs:
             tests/**
 
       - name: Done
-        run: echo "WordPress theme deployment completed!!!"
+        run: echo "WordPress theme deployment completed!"
