@@ -21,13 +21,42 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
         run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/known_hosts
+          set -e
+
+          mkdir -p "$HOME/.ssh"
+          chmod 700 "$HOME/.ssh"
+
+          # Save deployment private key
+          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/github_studymind_deploy"
+          chmod 600 "$HOME/.ssh/github_studymind_deploy"
+
+          # Validate private key
+          ssh-keygen -y -P "" \
+            -f "$HOME/.ssh/github_studymind_deploy" > /dev/null
+
+          echo "SSH private key validated successfully"
+
+          # Install pre-verified server host key
+          test -n "$SSH_KNOWN_HOSTS"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Test SSH connection
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          ssh \
+            -i "$HOME/.ssh/github_studymind_deploy" \
+            -p "$SSH_PORT" \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            "$SSH_USER@$SSH_HOST" \
+            "echo 'SSH connection successful'"
 
       - name: Deploy theme
         env:
@@ -38,6 +67,8 @@ jobs:
           rsync -avz \
             --exclude='.git/' \
             --exclude='.github/' \
-            -e "ssh -i $HOME/.ssh/id_rsa -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes" \
+            -e "ssh -i $HOME/.ssh/github_studymind_deploy -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             ./ \
             "$SSH_USER@$SSH_HOST:/home/nhu0skyqo2lr/public_html/study-mind.webdevnow.uk/wp-content/themes/study-mind-blocks/"
+
+          echo "WordPress theme deployment completed!"
