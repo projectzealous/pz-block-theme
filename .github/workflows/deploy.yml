@@ -3,7 +3,7 @@ name: Deploy WordPress Theme
 on:
   push:
     branches:
-      - development
+      - studymind
 
   workflow_dispatch:
 
@@ -15,26 +15,44 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup SSH
+      - name: Check FTP settings
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
+          STUDYMIND_FTP_HOST: ${{ secrets.STUDYMIND_FTP_HOST }}
+          STUDYMIND_FTP_USERNAME: ${{ secrets.STUDYMIND_FTP_USERNAME }}
+          STUDYMIND_FTP_PASSWORD: ${{ secrets.STUDYMIND_FTP_PASSWORD }}
+          STUDYMIND_FTP_DIR: ${{ vars.STUDYMIND_FTP_DIR || secrets.STUDYMIND_FTP_DIR }}
         run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+          missing=0
+          for v in STUDYMIND_FTP_HOST STUDYMIND_FTP_USERNAME STUDYMIND_FTP_PASSWORD; do
+            if [ -n "${!v}" ]; then
+              echo "  $v: set"
+            else
+              echo "::error title=Check FTP settings::Secret $v is missing or empty"
+              missing=1
+            fi
+          done
+          if [ -n "$STUDYMIND_FTP_DIR" ]; then
+            echo "  STUDYMIND_FTP_DIR: $STUDYMIND_FTP_DIR"
+          else
+            echo "::error title=Check FTP settings::Variable STUDYMIND_FTP_DIR is missing or empty"
+            missing=1
+          fi
+          exit $missing
 
       - name: Deploy theme
-        env:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
-        run: |
-          rsync -avz \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            -e "ssh -i ~/.ssh/id_rsa -p $SSH_PORT" \
-            ./ "$SSH_USER@$SSH_HOST:/public_html/study-mind.webdevnow.uk/wp-content/themes/study-mind-blocks"
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.STUDYMIND_FTP_HOST }}
+          username: ${{ secrets.STUDYMIND_FTP_USERNAME }}
+          password: ${{ secrets.STUDYMIND_FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ${{ vars.STUDYMIND_FTP_DIR || secrets.STUDYMIND_FTP_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            **/node_modules/**
+            tests/**
+
+      - name: Done
+        run: echo "WordPress theme deployment completed!!!"
