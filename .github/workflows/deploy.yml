@@ -1,3 +1,4 @@
+
 name: Deploy WordPress Theme
 
 on:
@@ -26,6 +27,7 @@ jobs:
           printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
 
       - name: Deploy theme
         env:
@@ -36,5 +38,6 @@ jobs:
           rsync -avz \
             --exclude='.git/' \
             --exclude='.github/' \
-            -e "ssh -i ~/.ssh/id_rsa -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes"
+            -e "ssh -i $HOME/.ssh/id_rsa -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes" \
+            ./ \
             "$SSH_USER@$SSH_HOST:/home/nhu0skyqo2lr/public_html/study-mind.webdevnow.uk/wp-content/themes/study-mind-blocks/"
